@@ -1,0 +1,1 @@
+nome  = input('Qual é o seu nome? ') #função para solicitar dados do usuario
