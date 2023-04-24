@@ -14,3 +14,7 @@ elif(entrada == 'E' and senha_digitada != senha_permitida):
     print('Senha incorreta ')
 else:
     print('Saiu')
+
+print(bool(0)) #False
+print(bool(0.0)) #False
+print(bool(False)) #False
