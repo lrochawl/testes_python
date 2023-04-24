@@ -11,7 +11,7 @@ senha_permitida = '1234'
 
 if entrada == 'E' and senha_digitada == senha_permitida:
         print('Entrou')
-elif((entrada == 'E' or entrada == 'e') and senha_digitada != senha_permitida):
+elif((entrada == 'E' or entrada == 'e') and senha_digitada != senha_permitida): #utilizando operador Not que inverte o resultado da expressão
     print('Senha incorreta ')
 else:
     print('Saiu')
