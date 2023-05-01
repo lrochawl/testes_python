@@ -3,7 +3,8 @@
 nome = input('Digite seu nome ')
 idade = input('Digite sua idade ')
 
-if(nome != "" and idade != ""):
+#if(nome != "" and idade != ""):
+if(nome and idade ):
     print(f"Seu nome é {nome}")
     print(f"Seu nome invertido é {nome[::-1]}")
     if(nome.find(" ") == True):
@@ -15,6 +16,7 @@ if(nome != "" and idade != ""):
     else:
         print("Seu nome não possui letra 'N' ")
     print(f"A primeira letra do seu nome é '{nome[0]}'")
-    print(f"A ultima letra do seu no é {nome[len(nome)-1]}")
+    #print(f"A ultima letra do seu no é {nome[len(nome)-1]}")
+    print(f"A ultima letra do seu no é {nome[-1]}")
 else:
     print("Desculpe, você deixou campos vazios.")
