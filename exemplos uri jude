@@ -1,0 +1,102 @@
+PHP, JAVA, JAVASCRIPT, C#, (C++)
+
+PHP
+define('FILE',fopen('/dev/stdin', 'r'));
+$t  = explode(' ', fgets(FILE));
+$h1 = $t[0];
+$m1 = $t[1];
+$h2 = $t[2];
+$m2 = $t[3];
+$h3 = "";
+
+if($h1 < $h2){
+	$h3 = $h2 - $h1;
+	$m3 = (60 - $m1) + $m2 >= 60 ? ((60 - $m1) + $m2) - 60 : (60 - $m1) + $m2;
+	echo "O JOGO DUROU $h3 HORA(S) E $m3 MINUTO(S)\n";
+}else{
+	$h3 = 24 - ($h1 - $h2);
+	$m3 = (60 - $m1) + $m2 >= 60 ? ((60 - $m1) + $m2) - 60 : (60 - $m1) + $m2;
+	echo "O JOGO DUROU $h3 HORA(S) E $m3 MINUTO(S)\n";
+}
+
+
+//JAVA SCRIPT
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+let v = input.split(" ");
+let a = parseInt(v[0]);
+let b = parseInt(v[1]);
+
+if(a >= b){
+	let h = (24 - a) + b;
+	console.log("O JOGO DUROU %s HORA(S)", h);
+}
+if(a < b){
+	let h = b - a;
+	console.log("O JOGO DUROU %d HORA(S)", h);
+}
+
+C#
+using System; 
+
+class URI {
+    		public static void verificaT(double x, double y){
+			if(x == 0.0 & y == 0.0){
+				Console.WriteLine("Origem");
+			}else if(x != 0.0 & y == 0.0){
+				Console.WriteLine("Eixo X");
+			}else if(x == 0.0 & y != 0.0){
+				Console.WriteLine("Eixo Y");
+			}else if(x > 0.0 & y > 0.0){
+				Console.WriteLine("Q1");
+			}else if(x < 0.0 & y > 0.0){
+				Console.WriteLine("Q2");
+			}else if(x < 0.0 & y < 0.0){
+				Console.WriteLine("Q3");
+			}else if(x > 0.0 & y < 0.0){
+				Console.WriteLine("Q4");
+			}
+		}
+    static void Main(string[] args) { 
+            string[] coord = Console.ReadLine().Split(' ');
+			double x = double.Parse(coord[0].Trim());
+			double y = double.Parse(coord[1].Trim());
+			verificaT(x,y);
+
+    }
+
+}
+
+JAVA 
+import java.util.Scanner;
+import java.util.Locale;
+import java.io.IOException;
+
+class Main{
+	
+	public static void resultadoFinal(double x, double y){
+		if(x == 0 & y == 0){
+			System.out.println("Origem");
+		}else if(x != 0 & y == 0){
+			System.out.println("Eixo X");
+		}else if(x == 0 & y != 0){
+			System.out.println("Eixo Y");
+		}else if(x > 0 & y > 0){
+			System.out.println("Q1");
+		}else if(x < 0 & y > 0){
+			System.out.println("Q2");
+		}else if(x < 0 & y < 0){
+			System.out.println("Q3");
+		}else if(x > 0 & y < 0){
+			System.out.println("Q4");
+		}
+	}
+	
+	public static void main(String[] args){
+	Locale.setDefault(Locale.US);
+	Scanner sc = new Scanner(System.in);
+	double x = sc.nextDouble();
+	double y = sc.nextDouble();
+	
+	resultadoFinal(x, y);
+    }
+}
