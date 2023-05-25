@@ -1,17 +1,13 @@
-data = input("Que horas são: ")
- 
-try:
+nome = input("Qual o seu nome: ")
 
-    hora = int(data)
-
-    if(hora >= 0 and hora <= 11):
-        print("Bom dia")
-    elif(hora >= 12 and hora <= 17):
-        print("Boa tarde")
-    elif(hora >= 18 and hora <= 23):
-        print("Boa noite")
+tamanho = len(nome)
+if(tamanho > 2 ):
+    if(tamanho <= 4):
+        print("Seu nome é curto")
+    elif(tamanho >= 5 and tamanho <= 6):
+        print("Seu nome é normal")
+    # elif(tamanho > 6 ):
     else:
-        print("Não conheço essa hora")
-
-except:
-    print(f"{data} não é um numero")
+        print("Seu nome é muito grande")
+else:
+    print("Digite pelo menos uma letra")        

@@ -52,11 +52,16 @@ menos escreva "Seu nome é curto"; se tiver entre 5 e 6 letras, escreva
 """
 
 
-nome = input("Qual o seu nome")
+nome = input("Qual o seu nome: ")
 
-if(len(nome) <= 4):
-    print("Seu nome é curto")
-elif(len(nome) >= 5 and len(nome) <= 6):
-    print("Seu nome é normal")
-elif(len(nome) > 6 ):
-    print("Seu nome é muito grande")
+tamanho = len(nome)
+if(tamanho > 2 ):
+    if(tamanho <= 4):
+        print("Seu nome é curto")
+    elif(tamanho >= 5 and tamanho <= 6):
+        print("Seu nome é normal")
+    # elif(tamanho > 6 ):
+    else:
+        print("Seu nome é muito grande")
+else:
+    print("Digite pelo menos uma letra")        
