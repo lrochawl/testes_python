@@ -1,14 +1,17 @@
-hora_ini, minuto_ini, hora_final, minuto_final = (int (x) for x in input().split() )
+data = input("Que horas são: ")
+ 
+try:
 
-hora_ini = int(hora_ini) * 60 + minuto_ini
-hora_final = int(hora_final) * 60 + minuto_final
+    hora = int(data)
 
-duracao_jogo = hora_final - hora_ini
+    if(hora >= 0 and hora <= 11):
+        print("Bom dia")
+    elif(hora >= 12 and hora <= 17):
+        print("Boa tarde")
+    elif(hora >= 18 and hora <= 23):
+        print("Boa noite")
+    else:
+        print("Não conheço essa hora")
 
-if(duracao_jogo <= 0):
-    duracao_jogo = 24 * 60 - duracao_jogo
-
-minutos = duracao_jogo % 60
-horas = duracao_jogo // 60
-
-print("O JOGO DUROU "+str(horas)+" HORA(S) E "+str(minutos)+" MINUTO(S)")
+except:
+    print(f"{data} não é um numero")

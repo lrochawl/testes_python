@@ -8,6 +8,10 @@ inteiro, informe que não é um número inteiro.
 """
 n = input("Digite um numero inteirio ")
 
+
+#  pode ser utilizado também if (n.isdigit()): para verificar se foi digitado um numero inteiro
+
+
 try:
     n = int(n)
     if((n % 2 == 0) == True):
@@ -23,15 +27,23 @@ Faça um programa que pergunte a hora ao usuário e, baseando-se no horário
 descrito, exiba a saudação apropriada. Ex. 
 Bom dia 0-11, Boa tarde 12-17 e Boa noite 18-23.
 """
-hora = input("Que horas são")
+data = input("Que horas são: ")
+ 
+try:
 
+    hora = int(data)
 
-if(hora >= 0 and hora <= 11):
-    print("Bom dia")
-elif(hora >= 12 and hora <= 17):
-    print("Boa tarde")
-elif(hora >= 18 and hora <= 23):
-    print("Boa noite")
+    if(hora >= 0 and hora <= 11):
+        print("Bom dia")
+    elif(hora >= 12 and hora <= 17):
+        print("Boa tarde")
+    elif(hora >= 18 and hora <= 23):
+        print("Boa noite")
+    else:
+        print("Não conheço essa hora")
+
+except:
+    print(f"{data} não é um numero")
 
 """
 Faça um programa que peça o primeiro nome do usuário. Se o nome tiver 4 letras ou 
@@ -40,20 +52,11 @@ menos escreva "Seu nome é curto"; se tiver entre 5 e 6 letras, escreva
 """
 
 
+nome = input("Qual o seu nome")
 
-hora_ini, minuto_ini, hora_final, minuto_final = (int (x) for x in input().split() )
-
-hora_ini = hora_ini * 60 + minuto_ini
-hora_final = hora_final * 60 + minuto_final
-
-duracao_jogo = hora_final - hora_ini
-
-if(duracao_jogo <= 0):
-    duracao_jogo = 24 * 60 - duracao_jogo
-
-minutos = duracao_jogo % 60
-horas = duracao_jogo // 60
-
-print("O JOGO DUROU "+str(horas)+" HORA(S) E "+str(minutos)+" MINUTO(S)")
-
-javascript, java, c++, python, php
+if(len(nome) <= 4):
+    print("Seu nome é curto")
+elif(len(nome) >= 5 and len(nome) <= 6):
+    print("Seu nome é normal")
+elif(len(nome) > 6 ):
+    print("Seu nome é muito grande")
